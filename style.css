@@ -1,0 +1,1116 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f8f5f0;
+    background:
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(255, 255, 255, 0.045),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.035),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 70% 85%,
+            rgba(255, 255, 255, 0.025),
+            transparent 22%
+        ),
+        #000000;
+
+    background-attachment: fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 18%,
+            rgba(255, 255, 255, 0.018) 18%,
+            rgba(255, 255, 255, 0.018) 24%,
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 48%,
+            rgba(255, 255, 255, 0.015) 48%,
+            rgba(255, 255, 255, 0.015) 55%,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 78%,
+            rgba(255, 255, 255, 0.018) 78%,
+            rgba(255, 255, 255, 0.018) 84%,
+            transparent 84%
+        );
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+    background: #3e2ddb;
+    color: white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 50px 9%;
+}
+
+.hero-content {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    animation: fadeUp 1s ease;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 0.8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.hero-image img {
+    width: 330px;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #3e2ddb;
+
+    box-shadow:
+        0 0 0 12px rgba(62, 45, 219, 0.08),
+        0 0 60px rgba(62, 45, 219, 0.12);
+
+    transition: 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 0 16px rgba(62, 45, 219, 0.08),
+        0 0 80px rgba(62, 45, 219, 0.2);
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.tag {
+    letter-spacing: 4px;
+
+    color: #3e2ddb;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.name {
+    font-size: 72px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    color: white;
+
+    white-space: nowrap;
+
+    cursor: default;
+
+    display: inline-block;
+
+    transition: 0.35s ease;
+
+    transform-origin: left center;
+}
+
+.name span {
+    color: #3e2ddb;
+}
+
+.name:hover {
+    transform: scale(1.03);
+}
+
+.name::after {
+    content: "";
+
+    display: block;
+
+    width: 120px;
+    height: 2px;
+
+    background: #3e2ddb;
+
+    margin: 20px 0;
+}
+
+.hero h3 {
+    margin-top: 15px;
+
+    color: #d0d0d0;
+
+    font-weight: 400;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+}
+
+.intro {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+    color: #aeadb2;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+    margin-top: 35px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.buttons a {
+    text-decoration: none;
+
+    padding: 14px 30px;
+
+    border-radius: 40px;
+
+    background: #3e2ddb;
+
+    color: white;
+
+    display: inline-block;
+
+    font-weight: 600;
+
+    border: 1px solid #3e2ddb;
+
+    transition: 0.3s ease;
+}
+
+.buttons a:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(62, 45, 219, 0.3);
+}
+
+.buttons .outline {
+    background: transparent;
+
+    color: #3e2ddb;
+}
+
+.buttons .outline:hover {
+    background: #3e2ddb;
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(62, 45, 219, 0.25);
+}
+
+
+/* =========================================================
+   MAIN SECTIONS
+========================================================= */
+
+.section {
+    width: 85%;
+
+    margin: 80px auto;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.45);
+
+    transition: 0.4s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(62, 45, 219, 0.38);
+
+    box-shadow:
+        0 10px 40px rgba(62, 45, 219, 0.14);
+}
+
+.section h2 {
+    font-size: 42px;
+
+    margin-bottom: 25px;
+
+    color: white;
+
+    font-weight: 800;
+}
+
+.section p {
+    line-height: 1.8;
+
+    color: #bdbdbd;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   SKILLS / PROJECT GRID
+========================================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    column-gap: 20px;
+
+    /* Extra vertical space prevents tooltip overlap */
+    row-gap: 75px;
+}
+
+
+/* =========================================================
+   SKILL CARD
+========================================================= */
+
+.skill-card {
+    position: relative;
+
+    min-height: 130px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+
+    z-index: 1;
+}
+
+
+/* Hovered card always comes above everything */
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #3e2ddb;
+
+    box-shadow:
+        0 10px 25px rgba(62, 45, 219, 0.15);
+
+    z-index: 50;
+}
+
+.skill-card h3 {
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   DESKTOP TOOLTIP
+========================================================= */
+
+.tooltip {
+    position: absolute;
+
+    /*
+       Opens ABOVE the card.
+       This prevents the description from covering
+       the next row.
+    */
+    bottom: calc(100% + 12px);
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(8px);
+
+    width: 260px;
+
+    background: rgba(10, 10, 10, 0.98);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(62, 45, 219, 0.55);
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    color: #c5c5c5;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Tooltip appears */
+
+.skill-card:hover .tooltip {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+    position: relative;
+
+    border-left: 2px solid #3e2ddb;
+
+    padding-left: 30px;
+
+    margin-left: 8px;
+}
+
+.timeline-item {
+    position: relative;
+
+    margin-bottom: 40px;
+
+    padding: 5px 0;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -39px;
+
+    top: 9px;
+
+    width: 14px;
+    height: 14px;
+
+    background: #3e2ddb;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 6px rgba(62, 45, 219, 0.12);
+}
+
+.timeline-item h3 {
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    margin: 0 0 12px;
+}
+
+.timeline-item p {
+    color: #bdbdbd;
+
+    line-height: 1.8;
+}
+
+.timeline-item strong {
+    color: white;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.section a {
+    transition: 0.3s ease;
+}
+
+.section a:hover {
+    color: #3e2ddb !important;
+}
+
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume-section {
+    text-align: center;
+
+    padding: 60px 40px;
+}
+
+.resume-section p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #bdbdbd;
+}
+
+.resume-btn {
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+#contact p {
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+#contact strong {
+    color: white;
+}
+
+
+/* =========================================================
+   THANK YOU
+========================================================= */
+
+.thank-container {
+    min-height: 70vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+.thank-card {
+    width: 100%;
+
+    max-width: 850px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 32px;
+
+    padding: 70px 50px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.4);
+
+    transition: 0.4s ease;
+}
+
+.thank-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #3e2ddb;
+
+    box-shadow:
+        0 20px 60px rgba(62, 45, 219, 0.18);
+}
+
+.thank-small {
+    color: #3e2ddb;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.thank-card h1 {
+    margin-top: 15px;
+
+    font-size: 90px;
+
+    font-weight: 900;
+
+    letter-spacing: 10px;
+
+    color: white;
+}
+
+.thank-card p {
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    line-height: 2;
+
+    color: #bdbdbd;
+
+    font-size: 18px;
+}
+
+.thank-line {
+    width: 120px;
+
+    height: 2px;
+
+    background: #3e2ddb;
+
+    margin: 30px auto;
+}
+
+.thank-card h3 {
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .name {
+        font-size: 58px;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .section {
+        width: 90%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding: 70px 25px 50px;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* NAME */
+
+    .name {
+        font-size: 40px;
+
+        letter-spacing: 2px;
+
+        white-space: normal;
+
+        line-height: 1.15;
+
+        transform-origin: center;
+    }
+
+    .name:hover {
+        transform: scale(1.02);
+    }
+
+    .name::after {
+        margin: 20px auto;
+    }
+
+
+    /* HERO TEXT */
+
+    .hero h3 {
+        font-size: 18px;
+
+        line-height: 1.5;
+    }
+
+    .intro {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    /* BUTTONS */
+
+    .buttons {
+        justify-content: center;
+
+        gap: 8px;
+    }
+
+    .buttons a {
+        padding: 13px 23px;
+
+        font-size: 14px;
+    }
+
+
+    /* SECTIONS */
+
+    .section {
+        width: 90%;
+
+        margin: 50px auto;
+
+        padding: 25px;
+
+        border-radius: 20px;
+    }
+
+    .section:hover {
+        transform: none;
+    }
+
+    .section h2 {
+        font-size: 32px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* SKILLS */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+
+        row-gap: 15px;
+    }
+
+    .skill-card {
+        min-height: auto;
+
+        padding: 23px;
+
+        z-index: 1;
+    }
+
+    .skill-card:hover {
+        z-index: 2;
+
+        transform: translateY(-3px);
+    }
+
+
+    /*
+       On mobile the tooltip becomes normal
+       description text.
+    */
+
+    .tooltip {
+        position: static;
+
+        width: 100%;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+
+        margin-top: 12px;
+
+        padding: 12px 0 0;
+
+        background: transparent;
+
+        border: none;
+
+        border-top:
+            1px solid rgba(62, 45, 219, 0.2);
+
+        color: #9f9f9f;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        pointer-events: auto;
+
+        box-shadow: none;
+    }
+
+    .skill-card:hover .tooltip {
+        transform: none;
+    }
+
+
+    /* TIMELINE */
+
+    .timeline {
+        padding-left: 20px;
+
+        margin-left: 5px;
+    }
+
+    .timeline-item::before {
+        left: -29px;
+    }
+
+    .timeline-item h3 {
+        font-size: 19px;
+    }
+
+
+    /* RESUME */
+
+    .resume-section {
+        padding: 40px 25px;
+    }
+
+    .resume-btn {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .resume-btn a {
+        width: 100%;
+
+        max-width: 250px;
+
+        text-align: center;
+    }
+
+
+    /* THANK YOU */
+
+    .thank-container {
+        min-height: 60vh;
+
+        padding: 40px 20px;
+    }
+
+    .thank-card {
+        padding: 45px 20px;
+
+        border-radius: 24px;
+    }
+
+    .thank-card:hover {
+        transform: none;
+    }
+
+    .thank-card h1 {
+        font-size: 48px;
+
+        letter-spacing: 4px;
+    }
+
+    .thank-card p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .thank-card h3 {
+        font-size: 18px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .name {
+        font-size: 34px;
+    }
+
+    .hero-image img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .section {
+        width: 92%;
+
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .buttons a {
+        padding: 12px 20px;
+    }
+
+    .thank-card h1 {
+        font-size: 40px;
+
+        letter-spacing: 2px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
